@@ -21,9 +21,3 @@ clean:
 	rm $(ARMANALYSER)
 	make -C src clean
 	rm $(SAMPLEPROGRAM)
-
-livrable: livrable.tar.bz2
-
-livrable.tar.bz2: Makefile README $(ARMANALYSER) src/* \
-	test/helloworld* test/coreutils/*
-	tar -cjf $@ $^
