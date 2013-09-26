@@ -1,9 +1,0 @@
-Coreutils téléchargé depuis :
-	http://www.gnu.org/software/coreutils/
-
-Pour cross-compiler coreutils avec librairies statiques et pas d'optimisation :
-	./configure --host=arm-linux-gnueabi --target=arm-linux-gnueabi CFLAGS=-O0 LDFLAGS=-static
-	make -j 8
-
-Si problème pour la génération des man pages, commenter la ligne du Makefile
-contenant "man1_MANS = ".
