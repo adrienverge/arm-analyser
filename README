@@ -1,0 +1,27 @@
+ARM Analyser
+Written by Adrien Vergé <adrien.verge@polymtl.ca>
+Between January-March 2013
+Released under the GPLv2 license
+
+Dependencies:
+	- libelf
+		With Fedora:
+		# yum install elfutils-libelf-devel
+		With Debian-based OSes:
+		# apt-get install libelf-dev
+
+Useful tools:
+	- C cross-compiler
+		GNU EABI gcc
+		http://gcc.gnu.org/install/specific.html
+	- GraphViz
+		http://www.graphviz.org/
+
+Usage:
+	Compile the project:
+	$ make
+	Get help on how to use it:
+	$ ./arm-analyser help
+
+	You can test it on sample test binaries,
+	that are given in the 'test' directory.
