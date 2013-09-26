@@ -1,9 +1,8 @@
 Cross-compile programs for ARM
 ==============================
 
-For instance, [GNU Coreutils] [1].
-
-Download the source from [1].
+For instance, let's dot it with [GNU Coreutils] [1].
+Download the source from [the official website] [1].
 
 Then cross-compile it with static library linking and no optimisation:
 ```
