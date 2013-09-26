@@ -28,13 +28,16 @@ On Debian:
 # apt-get install libelf-dev
 ```
 
-Then, simply run `make`.
+Then, simply run:
+```
+$ make
+```
 
 To print pretty graphs (such as the analysed program CFG), you will need [GraphViz] [1].
 To make your own test binaries, you will need a C cross-compiler such as [GNU EABI gcc] [2].
 
-[1]: http://www.graphviz.org/	 "GraphViz"
-[2]: http://gcc.gnu.org/install/specific.html	"GNU EABI gcc"
+[1]: http://www.graphviz.org/  "GraphViz"
+[2]: http://gcc.gnu.org/install/specific.html  "GNU EABI gcc"
 
 Usage
 -----
