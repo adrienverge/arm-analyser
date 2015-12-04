@@ -20,7 +20,7 @@ First, you need to install the dependency: the libelf headers.
 
 On Fedora:
 ```
-# yum install elfutils-libelf-devel
+# dnf install elfutils-libelf-devel
 ```
 
 On Debian:
