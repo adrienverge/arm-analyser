@@ -1,23 +1,26 @@
 # cross-platform gcc: apt-get install gcc-4.4-arm-linux-gnueabi
 # cross-platform objdump: apt-get install binutils-multiarch
 
-ARMANALYSER=arm-analyser
-SAMPLEPROGRAM=test/helloworld
-TARGETS=$(SAMPLEPROGRAM) $(ARMANALYSER)
+ARMANALYSER = arm-analyser
+SAMPLEPROGRAM = test/helloworld
+TARGETS = $(SAMPLEPROGRAM) $(ARMANALYSER)
 
-ARMCC=arm-linux-gnueabi-gcc
-ARMCCFLAGS=-Wall -O0 -static -march=armv5
-#ARMCCFLAGS=-Wall -O0 -static -march=armv5 -nostdlib
+ARMCC ?= arm-linux-gnueabi-gcc
+ARMCFLAGS = -Wall -O0 -static -march=armv5
+#ARMCFLAGS = -Wall -O0 -static -march=armv5 -nostdlib
 
+.PHONY:
 default:
 	make -C src
 	[ -f $(ARMANALYSER) ] || ln -s src/$(ARMANALYSER) $(ARMANALYSER)
-	make $(SAMPLEPROGRAM)
+
+.PHONY:
+test: $(SAMPLEPROGRAM)
 
 $(SAMPLEPROGRAM): $(SAMPLEPROGRAM).c
-	$(ARMCC) $(ARMCCFLAGS) -o $@ $<
+	$(ARMCC) $(ARMCFLAGS) $< -o $@
 
 clean:
-	rm $(ARMANALYSER)
+	rm -f $(ARMANALYSER)
 	make -C src clean
-	rm $(SAMPLEPROGRAM)
+	rm -f $(SAMPLEPROGRAM)
